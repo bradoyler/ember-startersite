@@ -21,7 +21,13 @@ p a:active, p a:hover { background-color: #666;}
 #header { margin:5px; margin-bottom: 20px; float: left; width: 100%;} 
 
 /* logo */
-a#logo { display: block; position: absolute; top: 3px; left:3px; }
+a#logo { 
+    font-size: 1.8em;
+    padding: 8px;
+    text-decoration: none;
+    display: block; position: absolute; top: 3px; left:3px;
+    font-family: 'Sansita One', cursive;
+ }
 #imglogo{ width:350px; }
 #imgicon { display: none; }
 
