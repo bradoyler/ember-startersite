@@ -34,39 +34,15 @@ App.AboutRoute = Ember.Route.extend({
 });
 
 App.IndexView = Em.View.extend({
-    didInsertElement: function() {
-        if(!__device__){
-        this.$('#sidecontent').hide().fadeIn(500);
-       }
-       
-    }
 });
 
 App.OurworkView = Em.View.extend({
-    didInsertElement: function() {
-      if(!__device__){
-       this.$('h1').hide().fadeIn(400);
-       this.$('.form-content').hide().slideDown(300);
-     }
-    }
 });
 
 App.AboutView = Em.View.extend({
-    didInsertElement: function() {
-     if(!__device__){
-       this.$('h1').hide().fadeIn(400);
-       this.$('.form-content').hide().slideDown(300);
-     }
-    }
 });
 
 App.ContactView = Em.View.extend({
-    didInsertElement: function() {
-     if(!__device__){
-       this.$('h1').hide().fadeIn(400);
-       this.$('.form-content').hide().slideDown(300);
-     }
-    }
 });
 
 App.RebelMouseView = Em.View.extend({
@@ -78,4 +54,36 @@ App.RebelMouseView = Em.View.extend({
       }
     }
 });
+
+//desktop-only amimations
+if (!__device__) {
+
+    App.IndexView.reopen({
+      didInsertElement: function() {
+        this.$('#sidecontent').hide().fadeIn(500);
+      }
+    });
+
+     App.OurworkView.reopen({
+      didInsertElement: function() {
+         this.$('h1').hide().fadeIn(400);
+         this.$('.form-content').hide().slideDown(300);
+      }
+    });
+
+      App.AboutView.reopen({
+      didInsertElement: function() {
+         this.$('h1').hide().fadeIn(400);
+         this.$('.form-content').hide().slideDown(300);
+      }
+    });
+
+     App.ContactView.reopen({
+      didInsertElement: function() {
+         this.$('h1').hide().fadeIn(400);
+         this.$('.form-content').hide().slideDown(300);
+      }
+    });    
+
+}
 
