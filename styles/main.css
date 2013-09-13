@@ -32,6 +32,23 @@ a#logo {
     display: none;
 }
 
+/* Blog styles */
+.blog {
+  max-width: 880px
+}
+.post {
+     box-shadow: 5px 5px 5px rgba(22,22,22,0.4);
+    background-color: #fff;
+    margin-bottom: 19px;
+    border-radius: 3px;
+}
+.post-title {
+    padding: 12px 6px 6px 9px;
+}
+.post-body {
+    padding: 10px;
+}
+
 @media(min-width : 320px) and (max-width : 480px) {
     #header{ margin: 0;}
     a#logo{ display: none; }
@@ -98,6 +115,7 @@ div.form
 }
 
 .form-header {
+     box-shadow: 5px 5px 5px rgba(22,22,22,0.4);
     padding: 15px;
     background:  transparent url('../img/content_bg.png');
 	border-radius:3px; 
