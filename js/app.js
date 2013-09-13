@@ -4,9 +4,10 @@ App.Router.map(function() {
   this.route("ourwork", { path: "/ourwork" });
   this.route("about", { path: "/about" });
   this.route("contact", { path: "/contact" });
+   this.route("blog", { path: "/blog" });
 
   __device__ = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/);
-      
+     
 });
 
 App.OurworkRoute = Ember.Route.extend({
@@ -33,6 +34,38 @@ App.AboutRoute = Ember.Route.extend({
   }
 });
 
+App.Post = Ember.Object.extend({});
+
+App.Post.reopenClass({
+    getPosts: function() {
+        var posts = []; 
+        $.ajax({
+            url: "http://api.tumblr.com/v2/blog/bradoyler.tumblr.com/posts/text?api_key=fuiKNFp9vQFvjLNvx4sUwti4Yb5yGutBN4Xh10LXZhhRKjWlV4&notes_info=true",
+            type: "GET",
+            async: true,
+            cache: true,
+            dataType: "jsonp",
+        }).then(function(response) {
+            response.response.posts.forEach(function(post){
+                var model = App.Post.create(post); 
+                posts.addObject(model); //fill your array step by step
+            });
+        });
+        return posts;
+    }
+});
+
+App.BlogRoute = Ember.Route.extend({
+     model: function(){
+        if(!this.currentModel){ // so ajax doesn't fire on each load
+            return App.Post.getPosts();
+        }
+        else {
+          return this.currentModel;
+        }
+    }
+});
+
 App.IndexView = Em.View.extend({
 });
 
@@ -48,9 +81,8 @@ App.ContactView = Em.View.extend({
 App.RebelMouseView = Em.View.extend({
     didInsertElement: function() {
        if(!__device__){
-          this.$().hide().fadeIn(800);
           var widgetEmbedCode = '<div class="form-header"><h1>Social feed</h1></div><script type="text/javascript" class="rebelmouse-embed-script" src="https://www.rebelmouse.com/static/js-build/embed/embed.js?site=W3portals&height=900&flexible=1"></script>';
-         this.$().append(widgetEmbedCode);
+        // this.$().append(widgetEmbedCode);
       }
     }
 });
@@ -86,4 +118,3 @@ if (!__device__) {
     });    
 
 }
-

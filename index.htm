@@ -37,6 +37,7 @@
             {{#linkTo "ourwork" tagName="li" href=false}}{{#linkTo "ourwork"}}WORK{{/linkTo}}{{/linkTo}}
             {{#linkTo "about" tagName="li" href=false}}{{#linkTo "about"}}ABOUT{{/linkTo}}{{/linkTo}}
             {{#linkTo "contact" tagName="li" href=false}} {{#linkTo "contact"}}CONTACT{{/linkTo}}{{/linkTo}}
+            {{#linkTo "blog" tagName="li" href=false}} {{#linkTo "blog"}}BLOG{{/linkTo}}{{/linkTo}}
         </ul>
     </div>
    </div>
@@ -64,7 +65,7 @@
      </div>
   </script>
   <script type="text/x-handlebars" data-template-name="ourwork">
-    <div id="ourwork-section" class="form">
+    <div class="section form">
                     <div class="form-header">
                         <h1>Client Work</h1>
                     </div>
@@ -83,7 +84,7 @@
     </div>
   </script>
   <script type="text/x-handlebars" data-template-name="about">
-           <div id="About-section" class="form">
+           <div class="form section">
                     <div id="about">
                         <div class="form-header">
                             <h1>About</h1>
@@ -106,7 +107,7 @@
   </script>
 
    <script type="text/x-handlebars" data-template-name="contact">
-    <div id="contactus-section" class="form">
+    <div class="form section">
                     <div class="form-header"><h1>Contact</h1> </div>
                     <div class="form-content">
                      <h2>How to get in touch:</h2>
@@ -118,6 +119,21 @@
             </div>
       </div>
   </script>
+
+    <script type="text/x-handlebars" data-template-name="blog">
+    <div class="section form">
+     <div class="form-header"><h1>Tumblr feed</h1> </div>
+                    <div class="form-content">
+        {{#each post in model}}
+            
+            <h3> {{post.title}}</h3>
+                   {{{post.body}}}
+              <hr>
+        {{/each}}
+        </div>
+    </div>
+    </script>
+  
 
   <script src="js/libs/jquery-1.9.1.js"></script>
   <script src="js/libs/handlebars-1.0.0.js"></script>

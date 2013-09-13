@@ -131,8 +131,8 @@
 .fancyNav li a{
     color: #5d5d5d;
     display: inline-block;
-    font-size: 18px;
-    padding: 12px;
+    font-size: 15px;
+    padding: 10px 6px 10px 6px;
     position: relative;
     text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
     z-index:2;
