@@ -121,16 +121,18 @@
   </script>
 
     <script type="text/x-handlebars" data-template-name="blog">
-    <div class="section form">
+    <div class="blog form">
      <div class="form-header"><h1>Tumblr feed</h1> </div>
-                    <div class="form-content">
+                 
         {{#each post in model}}
-            
-            <h3> {{post.title}}</h3>
+            <div class="post">
+            <h3 class="post-title"> {{post.title}}</h3>
+                <div class="post-body">
                    {{{post.body}}}
-              <hr>
+               </div>
+            </div>
         {{/each}}
-        </div>
+        
     </div>
     </script>
   
