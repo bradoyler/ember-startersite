@@ -19,7 +19,9 @@ p a:active, p a:hover { background-color: #666;}
 .normal{font-weight:normal;}
 
 #center { padding: 5px; }
-#header { margin:5px; margin-bottom: 20px; float: left; width: 100%;} 
+.header { 
+     position: fixed; top:1px;
+     margin:5px; margin-bottom: 20px; float: left; width: 100%;} 
 
 /* logo */
 a#logo { 
@@ -55,27 +57,12 @@ a#logo {
     padding: 10px;
 }
 
-@media(min-width : 320px) and (max-width : 480px) {
-    #header{ margin: 0;}
-    a#logo{ display: none; }
-    #imgicon { display: block; width:38px;}
-    #imglogo{ display: none; }
-
-    .small-logo{    
-    display: block;
-    font-family: 'Sansita One', cursive;
-    font-size: 1.5em;
-    }
+.nav-wrapper { 
+    max-width:320px; 
+    margin:auto;
 }
-
-@media(min-width : 480px) and (max-width : 1024px) {
-    #imglogo{ width: 200px; }
-}
-
-.nav-wrapper { max-width:320px; margin:auto;}
 
 #aboutlist > li { margin:5px;}
-
 #content { top: 126px; clear: both;}
 
 div#sidecontent
@@ -86,10 +73,11 @@ div#sidecontent
     color: #fff; float: left; clear: both; padding: 20px;
     border-radius:3px; 
     margin-right: 9px;
+    margin-top: 20px;
 }
 
 p#contactus-note { margin: 0; padding: 0;}
-#content-main { top: 126px; display: block; margin-top: 2px; clear: both;}
+#content-main { margin-top: 50px;}
 #content-main div.form { color: #4C4C4C; }
 
 #slogan  
@@ -102,7 +90,6 @@ p#contactus-note { margin: 0; padding: 0;}
     background-image: -moz-linear-gradient(top, #555, #222);
     background-image: linear-gradient(top, #555, #222);
    text-transform:uppercase; color: #555; font-size: 24px; font-weight: bold; padding: 25px 0; margin: 6px 0; text-align:center;
-  /* background-color:rgba(0,0,0, 0.7);*/
    border-radius:12px; -moz-border-radius: 12px; -webkit-border-radius: 12px;
    text-shadow:rgb(50,50,50) 0px 1px 0, #000 0 -1px 0;
  }
@@ -161,5 +148,26 @@ blockquote { margin: 0; margin-left: 15px;}
     background-color: transparent;
     max-width:880px;
     box-shadow: 2px 2px 2px rgba(22,22,22,0.4);
+}
+
+@media(min-width : 320px) and (max-width : 480px) {
+    .header{ margin: 0;}
+    a#logo{ display: none; }
+    #imgicon { display: block; width:38px;}
+    #imglogo{ display: none; }
+
+    .small-logo{    
+    display: block;
+    font-family: 'Sansita One', cursive;
+    font-size: 1.5em;
+    }
+    
+    div#sidecontent {
+     margin-top: 0px;
+    }
+}
+
+@media(min-width : 480px) and (max-width : 1024px) {
+    #imglogo{ width: 200px; }
 }
 
