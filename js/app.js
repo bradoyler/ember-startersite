@@ -1,3 +1,5 @@
+_TumblrUrl_ = "http://api.tumblr.com/v2/blog/bradoyler.tumblr.com/posts/text?api_key=fuiKNFp9vQFvjLNvx4sUwti4Yb5yGutBN4Xh10LXZhhRKjWlV4&notes_info=true";
+
 App = Ember.Application.create();
 
 App.Router.map(function() {
@@ -40,7 +42,7 @@ App.Post.reopenClass({
     getPosts: function() {
         var posts = []; 
         $.ajax({
-            url: "http://api.tumblr.com/v2/blog/bradoyler.tumblr.com/posts/text?api_key=fuiKNFp9vQFvjLNvx4sUwti4Yb5yGutBN4Xh10LXZhhRKjWlV4&notes_info=true",
+            url: _TumblrUrl_,
             type: "GET",
             async: true,
             cache: true,
