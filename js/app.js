@@ -80,11 +80,13 @@ App.AboutView = Em.View.extend({
 App.ContactView = Em.View.extend({
 });
 
-App.RebelMouseView = Em.View.extend({
+ App.RebelMouseView = Em.View.extend({
     didInsertElement: function() {
        if(!__device__){
-          var widgetEmbedCode = '<div class="form-header"><h1>Social feed</h1></div><script type="text/javascript" class="rebelmouse-embed-script" src="https://www.rebelmouse.com/static/js-build/embed/embed.js?site=W3portals&height=900&flexible=1"></script>';
-        // this.$().append(widgetEmbedCode);
+
+        var widgetEmbedCode = '<iframe src="rebelmousefeed.html" height="1100" width="875" frameborder="0" scrolling="yes"></iframe>';
+         // var widgetEmbedCode = '<div class="form-header"><h1>Social feed</h1></div><script type="text/javascript" class="rebelmouse-embed-script" src="https://www.rebelmouse.com/static/js-build/embed/embed.js?site=W3portals&height=900&flexible=1"></script>';
+         // this.$().append(widgetEmbedCode);
       }
     }
 });
